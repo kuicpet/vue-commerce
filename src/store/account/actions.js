@@ -2,6 +2,7 @@ import router from "../../router";
 import Axios from "axios";
 
 export function login({ commit }) {
+    // getting user from randomuser.me and storing in state
     let url = "https://randomuser.me/apa/";
     Axios.get(url).then(function (response) {
         let userData = {
