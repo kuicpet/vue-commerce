@@ -28,7 +28,9 @@ export function productdetails({ commit }, id) {
 // Add to cart
 export function addCart({ commit, getters }, payload) {
     let cart = getters.cart
-    cart.push(payload)
+    let data = payload.product
+    data["quantity"] = payload.quantity
+    cart.push(data)
     commit("setCart", cart)
 }
 
@@ -36,8 +38,8 @@ export function addCart({ commit, getters }, payload) {
 export function removeCart({ commit, getters }, id) {
     let cart = [];
     if(id) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
+        for (let i = 0; i < getters.length; i++) {
+            const element = getters.cart[i];
             if (element.id !== id) {
                 cart.push(element)
             }

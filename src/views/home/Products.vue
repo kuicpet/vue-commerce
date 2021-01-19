@@ -2,7 +2,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-4" v-for="product in products" :key="product.id">
-              
+              <ProductCard :product="product" />
           </div>
       </div>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import ProductCard from "../../components/ProductCard"
+import ProductCard from "./ProductCard";
 export default {
     computed: {
         ...mapGetters("product", ["products"]),

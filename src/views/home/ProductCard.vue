@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style>
-
+.card .product-image {
+    height: 18.75rem;
+}
 </style>
